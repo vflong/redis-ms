@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name: master
-        image: redis:3-alpine  # or just image: redis
+        image: vflong/redis-master
         resources:
           requests:
             cpu: 100m
@@ -50,7 +50,7 @@ spec:
       volumes:
         - name: "redis-data"
           persistentVolumeClaim:
-            claimName: redis-data-redis-master
+            claimName: redis-data-lifesense-qa2-redis-master
 ---
 apiVersion: v1
 kind: Service
@@ -111,4 +111,4 @@ spec:
       volumes:
         - name: "redis-data"
           persistentVolumeClaim:
-            claimName: redis-data-redis-slave
+            claimName: redis-data-lifesense-qa2-redis-slave
