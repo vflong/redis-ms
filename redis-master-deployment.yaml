@@ -2,6 +2,7 @@ apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and befor
 kind: Deployment
 metadata:
   name: redis-master
+  namespace: base
 spec:
   selector:
     matchLabels:
@@ -18,10 +19,17 @@ spec:
     spec:
       containers:
       - name: master
-        image: k8s.gcr.io/redis:e2e  # or just image: redis
+        image: vflong/redis-master 
         resources:
           requests:
             cpu: 100m
-            memory: 100Mi
+            memory: 1024Mi
         ports:
         - containerPort: 6379
+        volumeMounts:
+          - name: "redis-data"
+            mountPath: "/data"
+      volumes:
+        - name: "redis-data"
+          persistentVolumeClaim:
+            claimName: redis-data-redis-app-0
