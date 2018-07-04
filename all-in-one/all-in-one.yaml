@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name: master
-        image: redis:3-alpine  # or just image: redis
+        image: vflong/redis-master
         resources:
           requests:
             cpu: 100m
