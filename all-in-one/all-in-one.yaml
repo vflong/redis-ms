@@ -90,7 +90,7 @@ spec:
     spec:
       containers:
       - name: slave
-        image: vflong/redis-slave
+        image: vflong/redis-slave:qa2
         resources:
           requests:
             cpu: 100m
