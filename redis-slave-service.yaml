@@ -4,13 +4,13 @@ metadata:
   name: lifesense-qa-redis-slave
   namespace: base
   labels:
-    app: redis
+    app: lifesense-qa-redis
     role: slave
     tier: backend
 spec:
   ports:
   - port: 6379
   selector:
-    app: redis
+    app: lifesense-qa-redis
     role: slave
     tier: backend

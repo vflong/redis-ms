@@ -4,7 +4,7 @@ metadata:
   name: lifesense-qa-redis-master
   namespace: base
   labels:
-    app: redis
+    app: lifesense-qa-redis
     role: master
     tier: backend
 spec:
@@ -12,6 +12,6 @@ spec:
   - port: 6379
     targetPort: 6379
   selector:
-    app: redis
+    app: lifesense-qa-redis
     role: master
     tier: backend

@@ -4,7 +4,7 @@ metadata:
   name: lifesense-qa-redis-master
   namespace: base
   labels:
-    app: redis
+    app: lifesense-qa-redis
     tier: backend
     role: master
 spec:
@@ -12,7 +12,7 @@ spec:
   - port: 6379
     targetPort: 6379
   selector:
-    app: redis
+    app: lifesense-qa-redis
     tier: backend
     role: master
 ---
@@ -24,14 +24,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: redis
+      app: lifesense-qa-redis
       role: master
       tier: backend
   replicas: 1
   template:
     metadata:
       labels:
-        app: redis
+        app: lifesense-qa-redis
         role: master
         tier: backend
     spec:
@@ -58,14 +58,14 @@ metadata:
   name: lifesense-qa-redis-slave
   namespace: base
   labels:
-    app: redis
+    app: lifesense-qa-redis
     tier: backend
     role: slave
 spec:
   ports:
   - port: 6379
   selector:
-    app: redis
+    app: lifesense-qa-redis
     tier: backend
     role: slave
 ---
@@ -77,14 +77,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: redis
+      app: lifesense-qa-redis
       role: slave
       tier: backend
   replicas: 1
   template:
     metadata:
       labels:
-        app: redis
+        app: lifesense-qa-redis
         role: slave
         tier: backend
     spec:
