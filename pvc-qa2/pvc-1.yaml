@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   annotations:
     volume.beta.kubernetes.io/storage-class: "rook-block2"  
-  name: redis-data-lifesense-qa2-redis-slave
+  name: redis-data-lifesense-qa-redis-slave
   namespace: base
   labels:
     app: redis
