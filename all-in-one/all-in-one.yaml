@@ -9,7 +9,9 @@ metadata:
     role: master
 spec:
   ports:
-  - port: 6379
+  - nodePort: 31764
+    port: 6379
+    protocol: TCP
     targetPort: 6379
   selector:
     app: lifesense-qa-redis
