@@ -17,3 +17,4 @@ spec:
     app: lifesense-qa-redis
     role: master
     tier: backend
+  type: NodePort
