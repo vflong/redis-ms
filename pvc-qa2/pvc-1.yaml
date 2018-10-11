@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   annotations:
-    volume.beta.kubernetes.io/storage-class: "rook-block2"  
+    volume.beta.kubernetes.io/storage-class: "ceph-ussd"  
   name: redis-data-lifesense-qa2-redis-slave
   namespace: base
   labels:

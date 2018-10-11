@@ -13,8 +13,8 @@ spec:
     port: 6379
     protocol: TCP
     targetPort: 6379
-
   selector:
     app: redis
     role: master
     tier: backend
+  type: NodePort
